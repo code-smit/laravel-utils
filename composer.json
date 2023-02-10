@@ -1,0 +1,22 @@
+{
+	"name": "jomo/utils",
+	"description": "Geo utils package",
+	"type": "library",
+	"license": "MIT",
+	"autoload": {
+		"psr-4": {
+			"Jomo\\Utils\\": "src/"
+		}
+	},
+	"authors": [
+		{
+			"name": "Matthijs Smit",
+			"email": "matthijs@codesmit.nl"
+		}
+	],
+	"require": {
+		"php": "^8.0",
+		"laravel/framework": "^9.0",
+		"malhal/laravel-geographical": "^1.0"
+	}
+}
