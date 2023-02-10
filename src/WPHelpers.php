@@ -26,15 +26,15 @@ class WPHelpers
             return abort(404);
         }
 
-        return Cache::tags(["content", config("content.tags.pages")])->remember("page_content_${slug}", 3600,  function () use ($data) {
+        return Cache::tags(["content", config("content.tags.pages")])->remember("page_content_$slug", 3600,  function () use ($data) {
             return $data[0]["acf"];
         });
     }
 
     public static function getOptions(string $slug)
     {
-        return Cache::tags(["content", config("content.tags.options")])->remember("options_${slug}", 300,  function () use ($slug) {
-            $response = Http::content()->timeout(3)->get("/wp-json/acf/v3/options/${slug}");
+        return Cache::tags(["content", config("content.tags.options")])->remember("options_$slug", 300,  function () use ($slug) {
+            $response = Http::content()->timeout(3)->get("/wp-json/acf/v3/options/$slug");
 
             if (!$response->successful()) {
                 return abort(404);
@@ -53,8 +53,8 @@ class WPHelpers
 
     public static function getMenu(string $slug)
     {
-        return Cache::tags(["content", config("content.tags.menus")])->remember("menu_${slug}", 300,  function () use ($slug) {
-            $response = Http::content()->timeout(3)->get("/wp-json/menus/v1/menus/${slug}");
+        return Cache::tags(["content", config("content.tags.menus")])->remember("menu_$slug", 300,  function () use ($slug) {
+            $response = Http::content()->timeout(3)->get("/wp-json/menus/v1/menus/$slug");
 
             if (!$response->successful()) {
                 return abort(404);
