@@ -1,6 +1,6 @@
 <?php
 
-namespace Jomo\Utils;
+namespace CodeSmit\LaravelHelpers;
 
 use Illuminate\Support\Facades\Cache;
 use Illuminate\Support\Facades\Http;

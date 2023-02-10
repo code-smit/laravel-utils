@@ -1,6 +1,6 @@
 <?php
 
-namespace Jomo\Utils;
+namespace CodeSmit\LaravelHelpers;
 
 use Illuminate\Database\Eloquent\Model;
 use Malhal\Geographical\Geographical;
